@@ -1,0 +1,75 @@
+
+<table id="robo">
+  <thead>
+    <tr>
+      <th>Parte do Robo</th>
+      <th>Posição Atual</th>
+      <th>Avançar Posição</th>
+      <th>Voltar Posição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Braço Direito - Pulso</td>
+      <td>{{ robo?.bracoDireito?.pulso?.descricao }}</td>
+      <td>
+        <button *ngIf="robo?.bracoDireito?.pulso?.avancar?.ativo == true" (click)="movimentarPulso(1, 1)">Avançar</button>
+      </td>
+      <td>
+        <button *ngIf="robo?.bracoDireito?.pulso?.voltar?.ativo == true" (click)="movimentarPulso(1, 2)">Avançar</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Braço Direito - Cotovelo</td>
+      <td>{{ robo?.bracoDireito?.cotovelo?.descricao }}</td>
+      <td>
+        <button *ngIf="robo?.bracoDireito?.cotovelo?.avancar?.ativo == true" (click)="movimentarCotovelo(1, 1)">Avançar</button>
+      </td>
+      <td>
+        <button *ngIf="robo?.bracoDireito?.cotovelo?.voltar?.ativo == true" (click)="movimentarCotovelo(1, 2)">Avançar</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Braço Esquerdo - Pulso</td>
+      <td>{{ robo?.bracoEsquerdo?.pulso?.descricao }}</td>
+      <td>
+        <button *ngIf="robo?.bracoEsquerdo?.pulso?.avancar?.ativo == true" (click)="movimentarPulso(2, 1)">Avançar</button>
+      </td>
+      <td>
+        <button *ngIf="robo?.bracoEsquerdo?.pulso?.voltar?.ativo == true" (click)="movimentarPulso(2, 2)">Voltar</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Braço Esquerdo - Cotovelo</td>
+      <td>{{ robo?.bracoEsquerdo?.cotovelo?.descricao }}</td>
+      <td>
+        <button *ngIf="robo?.bracoEsquerdo?.cotovelo?.avancar?.ativo == true" (click)="movimentarCotovelo(2, 1)">Avançar</button>
+      </td>
+      <td>
+        <button *ngIf="robo?.bracoEsquerdo?.cotovelo?.voltar?.ativo == true" (click)="movimentarCotovelo(2, 2)">Voltar</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Cabeça - Rotação</td>
+      <td>{{ robo?.cabeca?.rotacao?.descricao }}</td>
+      <td>
+        <button *ngIf="robo?.cabeca?.rotacao?.avancar?.ativo == true" (click)="rotacionarCabeca(1)">Avançar</button>
+      </td>
+      <td>
+        <button *ngIf="robo?.cabeca?.rotacao?.voltar?.ativo == true" (click)="rotacionarCabeca(2)">Voltar</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Cabeça - Inclinação</td>
+      <td>{{ robo?.cabeca?.inclinacao?.descricao }}</td>
+      <td>
+        <button *ngIf="robo?.cabeca?.inclinacao?.avancar?.ativo == true" (click)="inclinarCabeca(1)">Avançar</button>
+      </td>
+      <td>
+        <button *ngIf="robo?.cabeca?.inclinacao?.voltar?.ativo == true" (click)="inclinarCabeca(2)">Voltar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<router-outlet></router-outlet>
